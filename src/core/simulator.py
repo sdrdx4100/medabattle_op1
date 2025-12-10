@@ -235,11 +235,11 @@ class Simulator:
         for entry in state.log.entries:
             damage = entry.get("damage", 0)
             if damage > 0:
-                # Find actor team from log
-                actor_name = entry.get("actor", "")
-                if actor_name.startswith("PlayerBot"):
+                # Find actor team from log entry
+                actor_team = entry.get("actor_team")
+                if actor_team == 0:
                     total_damage_a += damage
-                else:
+                elif actor_team == 1:
                     total_damage_b += damage
         
         return SimulationResult(

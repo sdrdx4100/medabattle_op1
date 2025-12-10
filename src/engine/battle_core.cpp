@@ -10,13 +10,33 @@
 
 #include "battle_core.hpp"
 #include <algorithm>
+#include <chrono>
 #include <cmath>
 #include <random>
 
 namespace medabattle {
 
+namespace {
+    /**
+     * @brief Get a seed for the random number generator.
+     * 
+     * Uses std::random_device if available, falls back to time-based seed.
+     */
+    unsigned int get_seed() {
+        try {
+            std::random_device rd;
+            return rd();
+        } catch (...) {
+            // Fallback to time-based seed if random_device fails
+            return static_cast<unsigned int>(
+                std::chrono::high_resolution_clock::now().time_since_epoch().count()
+            );
+        }
+    }
+}
+
 // Thread-local random engine for thread safety
-static thread_local std::mt19937 rng(std::random_device{}());
+static thread_local std::mt19937 rng(get_seed());
 
 RuleConfig RuleConfig::default_config() {
     return RuleConfig{

@@ -80,8 +80,10 @@ class ActionResult:
         """Convert to log entry format."""
         return {
             "actor": self.action.actor.name,
+            "actor_team": self.action.actor.team,
             "part": self.action.part.name,
             "target": self.action.target.name,
+            "target_team": self.action.target.team,
             "hit": self.hit,
             "damage": self.damage,
             "effect": self.effect,
@@ -440,11 +442,15 @@ class BattleManager:
         
         # Try to import C++ engine
         try:
-            from ..engine import battle_engine
-            self._engine = battle_engine
-            self._use_cpp_engine = True
+            from ..engine import simulate_action, update_atb, HAS_CPP_ENGINE
+            if HAS_CPP_ENGINE:
+                self._simulate_action = simulate_action
+                self._update_atb = update_atb
+                self._use_cpp_engine = True
+            else:
+                self._use_cpp_engine = False
         except ImportError:
-            self._engine = None
+            self._use_cpp_engine = False
     
     def start_battle(self) -> None:
         """Initialize and start the battle."""
@@ -481,10 +487,10 @@ class BattleManager:
         Args:
             delta: Base time units to advance
         """
-        if self._use_cpp_engine and self._engine:
+        if self._use_cpp_engine:
             # Use C++ engine for ATB update
             state_dict = self.state.to_dict()
-            new_state = self._engine.update_atb(state_dict, delta)
+            new_state = self._update_atb(state_dict, delta)
             self._apply_atb_update(new_state)
         else:
             # Python fallback
@@ -514,9 +520,9 @@ class BattleManager:
         # Reset actor's ATB
         action.actor.atb_gauge = 0
         
-        if self._use_cpp_engine and self._engine:
+        if self._use_cpp_engine:
             # Use C++ engine for calculation
-            result_dict = self._engine.simulate_action(action.to_dict())
+            result_dict = self._simulate_action(action.to_dict())
             result = self._create_result_from_dict(action, result_dict)
         else:
             # Python fallback calculation

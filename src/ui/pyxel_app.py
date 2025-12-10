@@ -17,7 +17,7 @@ from ..core.battle_logic import (
     BattleState,
     MedalBasedStrategy,
 )
-from ..core.models import PartType, Robot, create_sample_robot
+from ..core.models import ActionType, PartType, Robot, create_sample_robot
 from .renderer import BattleRenderer
 
 
@@ -202,8 +202,7 @@ class MedaBattleApp:
         actor = self.battle_state.current_actor
         part = actor.available_actions[self.selected_part_index]
         
-        # Get valid targets
-        from ..core.models import ActionType
+        # Get valid targets based on action type
         if part.action_type in (ActionType.SUPPORT, ActionType.DEFEND):
             targets = self.battle_state.get_allies(actor)
         else:
