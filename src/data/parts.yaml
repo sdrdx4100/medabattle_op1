@@ -1,0 +1,205 @@
+# Part definitions for Medabot battle simulation
+# Each part has: name, part_type, action_type, stats
+
+parts:
+  # === HEAD PARTS ===
+  - name: "Standard Head"
+    part_type: "HEAD"
+    action_type: "SUPPORT"
+    success_value: 60
+    power: 20
+    charge: 15
+    cooldown: 25
+    armor: 30
+    hit_bonus: 5
+    evade_bonus: 0
+
+  - name: "Scanner Head"
+    part_type: "HEAD"
+    action_type: "SUPPORT"
+    success_value: 80
+    power: 15
+    charge: 10
+    cooldown: 20
+    armor: 25
+    hit_bonus: 15
+    evade_bonus: 0
+
+  - name: "Heavy Head"
+    part_type: "HEAD"
+    action_type: "SHOOT"
+    success_value: 45
+    power: 45
+    charge: 30
+    cooldown: 35
+    armor: 45
+    hit_bonus: 0
+    evade_bonus: -5
+
+  - name: "Jamming Head"
+    part_type: "HEAD"
+    action_type: "DISRUPT"
+    success_value: 55
+    power: 10
+    charge: 20
+    cooldown: 30
+    armor: 28
+    hit_bonus: 0
+    evade_bonus: 0
+
+  # === RIGHT ARM PARTS ===
+  - name: "Blaster Arm"
+    part_type: "RIGHT_ARM"
+    action_type: "SHOOT"
+    success_value: 55
+    power: 40
+    charge: 20
+    cooldown: 30
+    armor: 25
+    hit_bonus: 5
+    evade_bonus: 0
+
+  - name: "Cannon Arm"
+    part_type: "RIGHT_ARM"
+    action_type: "SHOOT"
+    success_value: 40
+    power: 60
+    charge: 35
+    cooldown: 40
+    armor: 30
+    hit_bonus: -5
+    evade_bonus: -5
+
+  - name: "Rapid Fire Arm"
+    part_type: "RIGHT_ARM"
+    action_type: "SHOOT"
+    success_value: 65
+    power: 25
+    charge: 10
+    cooldown: 15
+    armor: 20
+    hit_bonus: 10
+    evade_bonus: 0
+
+  - name: "Missile Arm"
+    part_type: "RIGHT_ARM"
+    action_type: "SHOOT"
+    success_value: 50
+    power: 55
+    charge: 25
+    cooldown: 35
+    armor: 25
+    hit_bonus: 0
+    evade_bonus: 0
+
+  # === LEFT ARM PARTS ===
+  - name: "Sword Arm"
+    part_type: "LEFT_ARM"
+    action_type: "STRIKE"
+    success_value: 50
+    power: 50
+    charge: 25
+    cooldown: 25
+    armor: 25
+    hit_bonus: 0
+    evade_bonus: 0
+
+  - name: "Shield Arm"
+    part_type: "LEFT_ARM"
+    action_type: "DEFEND"
+    success_value: 70
+    power: 10
+    charge: 10
+    cooldown: 20
+    armor: 50
+    hit_bonus: 0
+    evade_bonus: 15
+
+  - name: "Hammer Arm"
+    part_type: "LEFT_ARM"
+    action_type: "STRIKE"
+    success_value: 35
+    power: 70
+    charge: 35
+    cooldown: 40
+    armor: 30
+    hit_bonus: -10
+    evade_bonus: -5
+
+  - name: "Claw Arm"
+    part_type: "LEFT_ARM"
+    action_type: "STRIKE"
+    success_value: 60
+    power: 35
+    charge: 15
+    cooldown: 20
+    armor: 22
+    hit_bonus: 5
+    evade_bonus: 0
+
+  - name: "Repair Arm"
+    part_type: "LEFT_ARM"
+    action_type: "SUPPORT"
+    success_value: 65
+    power: 30
+    charge: 20
+    cooldown: 25
+    armor: 20
+    hit_bonus: 0
+    evade_bonus: 0
+
+  # === LEG PARTS ===
+  - name: "Standard Legs"
+    part_type: "LEGS"
+    action_type: "NONE"
+    success_value: 0
+    power: 0
+    charge: 20
+    cooldown: 0
+    armor: 35
+    hit_bonus: 0
+    evade_bonus: 10
+
+  - name: "Speed Legs"
+    part_type: "LEGS"
+    action_type: "NONE"
+    success_value: 0
+    power: 0
+    charge: 10
+    cooldown: 0
+    armor: 25
+    hit_bonus: 0
+    evade_bonus: 25
+
+  - name: "Tank Treads"
+    part_type: "LEGS"
+    action_type: "NONE"
+    success_value: 0
+    power: 0
+    charge: 35
+    cooldown: 0
+    armor: 60
+    hit_bonus: 0
+    evade_bonus: -10
+
+  - name: "Hover Legs"
+    part_type: "LEGS"
+    action_type: "NONE"
+    success_value: 0
+    power: 0
+    charge: 15
+    cooldown: 0
+    armor: 28
+    hit_bonus: 0
+    evade_bonus: 20
+
+  - name: "Multi-Leg"
+    part_type: "LEGS"
+    action_type: "NONE"
+    success_value: 0
+    power: 0
+    charge: 25
+    cooldown: 0
+    armor: 45
+    hit_bonus: 0
+    evade_bonus: 5

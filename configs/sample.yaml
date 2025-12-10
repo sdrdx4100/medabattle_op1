@@ -1,0 +1,73 @@
+# Sample simulation configuration
+# This file defines the battle setup for simulation runs
+
+name: "default"
+description: "Default balanced battle configuration"
+
+# Team sizes
+team_a_size: 3
+team_b_size: 3
+
+# Strategy for each team
+# Options: random, aggressive, defensive, medal
+team_a_strategy: "medal"
+team_b_strategy: "aggressive"
+
+# Maximum turns before declaring a draw
+max_turns: 1000
+
+# Random seed for reproducibility (null for random)
+seed: null
+
+# Optional: Define specific robots for teams
+# If not specified, default sample robots are used
+# team_a_robots:
+#   - name: "CustomBot_1"
+#     head:
+#       name: "Scanner Head"
+#       part_type: "HEAD"
+#       action_type: "SUPPORT"
+#       success_value: 80
+#       power: 15
+#       charge: 10
+#       cooldown: 20
+#       armor: 25
+#       hit_bonus: 15
+#       evade_bonus: 0
+#     right_arm:
+#       name: "Blaster Arm"
+#       part_type: "RIGHT_ARM"
+#       action_type: "SHOOT"
+#       success_value: 55
+#       power: 40
+#       charge: 20
+#       cooldown: 30
+#       armor: 25
+#       hit_bonus: 5
+#       evade_bonus: 0
+#     left_arm:
+#       name: "Shield Arm"
+#       part_type: "LEFT_ARM"
+#       action_type: "DEFEND"
+#       success_value: 70
+#       power: 10
+#       charge: 10
+#       cooldown: 20
+#       armor: 50
+#       hit_bonus: 0
+#       evade_bonus: 15
+#     legs:
+#       name: "Speed Legs"
+#       part_type: "LEGS"
+#       action_type: "NONE"
+#       armor: 25
+#       charge: 10
+#       evade_bonus: 25
+#     medal:
+#       name: "Tactical Medal"
+#       personality: "Tactical"
+#       weights:
+#         attack: 1.0
+#         support: 1.2
+#         disrupt: 1.8
+#         defend: 1.0
