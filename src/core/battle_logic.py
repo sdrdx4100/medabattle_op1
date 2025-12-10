@@ -149,11 +149,17 @@ class BattleState:
         Get winning team if battle is over.
         
         Returns:
-            0 for team A, 1 for team B, None if ongoing
+            0 for team A, 1 for team B, None if ongoing or not started
         """
-        if not self.active_team_b:
+        # Battle not started if no robots on either team
+        if not self.team_a and not self.team_b:
+            return None
+        
+        # Team A wins if team B has no functional robots
+        if self.team_b and not self.active_team_b:
             return 0
-        if not self.active_team_a:
+        # Team B wins if team A has no functional robots
+        if self.team_a and not self.active_team_a:
             return 1
         return None
     
