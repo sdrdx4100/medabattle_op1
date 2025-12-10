@@ -1,0 +1,83 @@
+# Medal definitions for Medabot battle simulation
+# Each medal has: name, personality, weights for action type preferences
+
+medals:
+  - name: "Balanced Medal"
+    personality: "Balanced"
+    weights:
+      attack: 1.0
+      support: 1.0
+      disrupt: 1.0
+      defend: 1.0
+
+  - name: "Aggressive Medal"
+    personality: "Aggressive"
+    weights:
+      attack: 2.0
+      support: 0.5
+      disrupt: 0.8
+      defend: 0.3
+
+  - name: "Defensive Medal"
+    personality: "Defensive"
+    weights:
+      attack: 0.5
+      support: 1.5
+      disrupt: 0.8
+      defend: 2.0
+
+  - name: "Tactical Medal"
+    personality: "Tactical"
+    weights:
+      attack: 1.0
+      support: 1.2
+      disrupt: 1.8
+      defend: 1.0
+
+  - name: "Berserker Medal"
+    personality: "Berserker"
+    weights:
+      attack: 3.0
+      support: 0.2
+      disrupt: 0.5
+      defend: 0.1
+
+  - name: "Healer Medal"
+    personality: "Healer"
+    weights:
+      attack: 0.3
+      support: 2.5
+      disrupt: 0.5
+      defend: 1.5
+
+  - name: "Trickster Medal"
+    personality: "Trickster"
+    weights:
+      attack: 0.8
+      support: 0.5
+      disrupt: 2.5
+      defend: 0.5
+
+  - name: "Guardian Medal"
+    personality: "Guardian"
+    weights:
+      attack: 0.6
+      support: 1.0
+      disrupt: 0.5
+      defend: 2.5
+
+  - name: "Sniper Medal"
+    personality: "Sniper"
+    weights:
+      attack: 2.5
+      support: 0.3
+      disrupt: 0.5
+      defend: 0.5
+
+  - name: "Support Medal"
+    personality: "Support"
+    weights:
+      attack: 0.4
+      support: 2.0
+      disrupt: 1.5
+      defend: 1.5

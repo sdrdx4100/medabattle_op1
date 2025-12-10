@@ -1,0 +1,101 @@
+# Action definitions for Medabot battle simulation
+# Defines behavior and effects for each action type
+
+actions:
+  # === OFFENSIVE ACTIONS ===
+  - type: "SHOOT"
+    name: "Ranged Attack"
+    description: "Fire a ranged weapon at the target"
+    target_type: "enemy"
+    can_target_part: true
+    base_accuracy_modifier: 0
+    effects: []
+
+  - type: "STRIKE"
+    name: "Melee Attack"
+    description: "Deliver a close-range physical attack"
+    target_type: "enemy"
+    can_target_part: true
+    base_accuracy_modifier: 5
+    effects: []
+
+  # === SUPPORT ACTIONS ===
+  - type: "SUPPORT"
+    name: "Support Action"
+    description: "Heal or buff an ally"
+    target_type: "ally"
+    can_target_part: true
+    base_accuracy_modifier: 10
+    effects:
+      - type: "heal"
+        power_multiplier: 0.5
+
+  # === DISRUPTIVE ACTIONS ===
+  - type: "DISRUPT"
+    name: "Disruption"
+    description: "Apply a debuff or status effect to enemy"
+    target_type: "enemy"
+    can_target_part: false
+    base_accuracy_modifier: 0
+    effects:
+      - type: "debuff"
+        possible_effects:
+          - "accuracy_down"
+          - "evasion_down"
+          - "power_down"
+          - "slow"
+
+  # === DEFENSIVE ACTIONS ===
+  - type: "DEFEND"
+    name: "Defense"
+    description: "Protect self or ally"
+    target_type: "ally"
+    can_target_part: false
+    base_accuracy_modifier: 20
+    effects:
+      - type: "buff"
+        possible_effects:
+          - "evasion_up"
+          - "power_up"
+
+# Status effect definitions
+status_effects:
+  accuracy_up:
+    name: "Accuracy Up"
+    duration: 3
+    hit_modifier: 20
+
+  accuracy_down:
+    name: "Accuracy Down"
+    duration: 3
+    hit_modifier: -20
+
+  evasion_up:
+    name: "Evasion Up"
+    duration: 3
+    evade_modifier: 20
+
+  evasion_down:
+    name: "Evasion Down"
+    duration: 3
+    evade_modifier: -20
+
+  power_up:
+    name: "Power Up"
+    duration: 3
+    damage_modifier: 1.5
+
+  power_down:
+    name: "Power Down"
+    duration: 3
+    damage_modifier: 0.5
+
+  haste:
+    name: "Haste"
+    duration: 3
+    atb_modifier: 1.5
+
+  slow:
+    name: "Slow"
+    duration: 3
+    atb_modifier: 0.5
