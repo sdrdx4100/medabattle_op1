@@ -18,6 +18,9 @@ var/
 wheels/
 *.egg-info/
 .installed.cfg
+
+# CodeQL
+_codeql_detected_source_root
 *.egg
 MANIFEST
 
